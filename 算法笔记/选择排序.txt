@@ -1,0 +1,41 @@
+a||b  a为true 则不走b,a为false，走b
+a&&b  a为true则走b,a为false，则不走b
+
+选择排序：
+从大到小
+int[] arr = {3,4,5,7,5,2,9,75,5};
+int leng= arr.length;  
+for(int i=0;i<leng;i++){ //遍历第一个值
+	int minIndex=i; //初始化假设第一个值为最小
+			
+	for(int j=1+i;j<leng;j++) { //从第二个值开始比较  i+1 ,以此从第三个，第四个。。。。。。。。
+		if(arr[i]>arr[j]) { 
+			minIndex=j; //如果比当前值小则替换
+			swap(arr,i,minIndex); //交换值
+		}
+	}
+}
+
+//交换函数
+public static void swap(int[] array,int i,int j) {
+		int tmp=array[i];
+		array[i]=array[j];
+		array[j]=tmp;
+	}
+
+
+
+//阶乘
+1!+2!+3!+.....n!
+
+处理思路是
+遍历从1~n :  每次遍历，计算一下阶乘，然后保存乘积的结果用于下一次计算，
+public static void format(int num) {
+		int b=0;
+		int c=1;
+		for(int i=1;i<num+1;i++) {
+			c=c*i;
+			b +=c;
+		}
+		System.out.print(b);
+	}
