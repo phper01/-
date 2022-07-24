@@ -1,0 +1,26 @@
+final 类加载的时候必须初始化；
+
+单例模式是线程安全的，但是在多线程执行的时候，会存在多个实例，
+保证线程安全的写法有两种
+1.final 初始化时赋值，先把类加到内存中，用的时候直接返回
+2.加锁，在锁之内再判断是否存在实例，确保是一个实例存在，双重判断
+	volatile 防止类初始化的时候还未完成就返回实例
+	
+3.类里增加静态类
+
+public class page(){
+	public static class pageholder(){
+		private final static page INSTANCE=new page();
+	}
+}
+
+4.直接定义为 枚举ebum 里面加入 INSTANCE 指定单例；
+public ebum page(){
+	INSTANCE；
+}
+
+
+new Thread(()->{
+	//多行代码 1行{} 可以去掉
+}) 
+
