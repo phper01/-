@@ -1,0 +1,23 @@
+进程：操作系统分配资源的基本单位
+线程：程序执行的最小单位
+
+单核cpu 多线程是否有意义
+当一个线程等待输入或者sleep的时候，可以执行另外的线程
+
+线程切换，操作系统调度cpu ，cpu 上下文切换完成线程切换；把正在执行的放到内存里，执行另外一个
+
+线程数量
+数量=cpu核数+想达到的cpu 利用率 （1%-100%） *（1+w/c）
+w:等待时间，
+c:执行时间
+
+jprofiter 工具，或者手动打印执行时间
+
+
+创建线程的办法
+new MyThread().start()
+new Thread(r).start()
+new Thread(lamda).start()
+ThreadPool
+FutureCallable and FutureTask
+
