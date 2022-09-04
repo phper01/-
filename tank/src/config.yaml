@@ -1,0 +1,6 @@
+root = true
+goodtankspeed=10
+badTankNum=20
+
+goodFS=tank.FourFireStrategy
+badFS=tank.DefaultFireStrategy
